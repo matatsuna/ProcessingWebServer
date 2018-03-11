@@ -32,7 +32,7 @@ void receiveMessage() {
     //受信終了次第、読み込む
     //受信終了を明示的な正規表現に変えたい
     //データ量が多いと失敗する恐れがある
-    if (match(s, "\r\n\r\n")!=null) {
+    if (match(s, "(\r\n|\n|\r)(\r\n|\n|\r)")!=null) {
       String request_text = "";
       for (String _str : savefile) {
         request_text+=_str;
